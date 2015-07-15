@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<script src="Scripts/angular.js"></script>
+</head>
+<body ng-app="app" ng-controller="customFilterController">
+	<input ng-model="search">
+	<table>
+		<tr ng-repeat="e in entities | myFilter:search">
+			<td>{{e.name}}</td>
+		</tr>
+	</table>
+</body>
+</html>
+<script>
+
+	var module = angular.module("app", []);
+
+	//http://codezine.jp/article/detail/8698
+
+
+	module.controller('customFilterController', ['$scope', function ($scope) {
+		$scope.search = "ok";
+		$scope.entities = [{ name: "abc", city: "yoshida" }, { name: "def", city: "高崎" }, { name: "ghi", city: "Kosin" },
+
+		{ name: "abe", city: "コシン" }];
+
+	}]).filter("myFilter", function ($filter) {
+		return function (items, input) {
+			//Filter前の処理
+
+			//このフィルダは、標準のフィルタです。
+			//nameやcityを調べてあいまい検索をします。
+			var result = $filter('filter')(items, input);
+			//Filter後の処理
+
+			return result;
+		}
+	});
+</script>
+<!--
+	http://qiita.com/armorik83/items/8e1f8003d4be8bb8555ef
+-->

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<script src="Scripts/angular.js"></script>
+	<script src="modle02_RegisteringValueForTypeScript.js"></script>
+
+</head>
+<body ng-app="main">
+	<div ng-controller="SimpleController">
+		<strong>Name:</strong> {{customer.name}}<br />
+		<strong>Name:</strong> {{customer.name2}}<br />
+		<strong>City:</strong> <span ng-bind="customer.city"></span><br />
+		<strong>Customer Full name:</strong> {{customer.getFullName()}}<br />
+		<strong>Base Full name:</strong> {{getFullName()}}<br />
+		<br />
+		<label>Set the name: <input type="text" ng-model="customer.name" /></label><br />
+		<label>Set the name2: <input type="text" ng-model="customer.name2" /></label><br />
+		<label>Set the city: <input type="text" ng-model="customer.city" /></label><br />
+		<br />
+		{{1+3}}←これは４が表示される <br />
+	</div>
+</body>
+</html>

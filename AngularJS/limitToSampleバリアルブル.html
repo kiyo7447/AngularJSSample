@@ -1,0 +1,50 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Limit To Sample</title>
+	<script src="Scripts/angular.js"></script>
+
+</head>
+<body ng-app="app" ng-controller="LimitToController">
+	<!-- (1)　単純な使い方 -->
+	<div>{{list | limitTo: 3: 3}}</div>
+
+	<h5>ページング</h5>
+	<!-- (2) ngRepeatと組み合わせることで簡単にページング処理ができるようになる -->
+	<div ng-repeat="p in pages">
+		<a ng-click="page(p);">{{p + 1}}ページ</a>|
+	</div>
+	<div ng-repeat="item in list | limitTo: limit: begin" style="border-bottom: 1px solid #666">
+		<span>{{item}}</span>
+	</div>
+</body>
+</html>
+<script>
+	var module = angular.module("app", []);
+
+	//http://codezine.jp/article/detail/8698
+
+
+	module.controller('LimitToController', ['$scope', function ($scope) {
+		var list = [];
+		var pages = [];
+		var j = 0;
+		for (var i = 0; i < 100; i++) {
+			list.push(i);
+			if (i % 10 === 0) {
+				pages.push(j);
+				j++;
+			}
+		}
+		$scope.pages = pages;
+		$scope.list = list;  // データ
+		$scope.limit = 10;   // 1ページ当たりの件数
+		$scope.begin = 0;  // 現在のページの最初のindex
+		$scope.page = function (page) {
+			$scope.begin = page * $scope.limit;
+		}
+	}]);
+
+
+
+</script>

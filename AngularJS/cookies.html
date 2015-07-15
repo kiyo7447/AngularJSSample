@@ -1,0 +1,72 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<script src="Scripts/angular.js"></script>
+	<script src="Scripts/angular-cookies.js"></script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="Cookie14Controller">
+		firstName:{{firstName}}
+
+		<h2>Cookie</h2>
+		<section class="c-section">
+			<input type="text" ng-model="cookie_value">
+			<button ng-click="save()">Save</button>
+		</section>
+	</div>
+</body>
+</html>
+
+<script>
+	var module = angular.module("app", ["ngCookies"]);
+
+	module.controller('Cookie14Controller', ['$scope', '$cookies', function ($scope, $cookies) {
+		$scope.firstName = "ok";
+
+		// : (省略)
+		//  (1) 単純な値の取得と保存
+		var uid = $cookies.get('tmp_id');
+		if (!uid) {
+			uid = "123456";
+			$cookies.put('tmp_id', uid);
+		}
+		//  (2) オブジェクト形式の取得と保存
+		var getObj = $cookies.getObject('key');
+		var obj = {
+			key: 'sample'
+		};
+		$cookies.putObject('key', obj);
+		var opts = $cookies.get('opts');
+		console.log(opts);
+		//  (3) クッキー保存時にオプションを指定
+		$cookies.put('opts', 'value', {
+			path: '/',
+			expires: new Date(2015, 7, 1)
+			// secure : false,
+			// domain : 'www.coltware.com'
+		});
+		//  (4) 保存してあるクッキーの値をすべて取得する方法
+		console.log($cookies.getAll());
+
+		//--------------------------------------------------------------------------------
+		var cookieKey = 'myCookie';
+
+		$scope.cookie_value = $cookies.get(cookieKey);
+
+		$scope.save = function () {
+			$cookies.put(cookieKey,$scope.cookie_value);
+			console.log("save coookie.");
+			console.log("cookies data:" + $cookies.getAll());
+			console.log($cookies.getAll());
+		}
+
+	}]);
+</script>
+<!--
+http://codezine.jp/article/detail/8698?p=2
+http://qiita.com/tsuchikazu@github/items/282bd7a990170a9adfb6
+
+
+http://whiskers.nukos.kitchen/2015/04/21/angularjs-storage.html
+-->

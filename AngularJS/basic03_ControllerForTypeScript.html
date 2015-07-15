@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<script src="Scripts/angular.js"></script>
+	<script src="basic03_ControllerForTypeScript.js"></script>
+
+</head>
+<body ng-app="main">
+	<div ng-controller="simpleController">
+		<strong>First name:</strong> {{firstName}}<br />
+		<strong>Last name:</strong> <span ng-bind="lastName"></span><br />
+		<strong>Full name:</strong> {{getFullName()}}<br />
+		<br />
+		<label>Set the first name: <input type="text" ng-model="firstName" /></label><br />
+		<label>Set the last name: <input type="text" ng-model="lastName" /></label><br />
+
+		<ul>
+			<li ng-repeat="customer in customers">
+				{{customer.name}}:{{customer.city}}
+			</li>
+		</ul>
+	</div><br />
+	<div ng-controller="simpleController2">
+		<strong>First name:</strong> {{firstName}}<br />
+		<strong>Last name:</strong> <span ng-bind="lastName"></span><br />
+		<strong>Full name:</strong> {{getFullName()}}<br />
+		<br />
+		<label>Set the first name: <input type="text" ng-model="firstName" /></label><br />
+		<label>Set the last name: <input type="text" ng-model="lastName" /></label><br />
+
+		<ul>
+			<li ng-repeat="customer in customers">
+				{{customer.name}}:{{customer.city}}
+			</li>
+		</ul>
+		<label>Set the customers[0].city: <input type="text" ng-model="customers[0].name" /></label><br />
+		<label>Set the customers[0].city: <input type="text" ng-model="customers[0].city" /></label><br />
+
+	</div>
+</body>
+</html>

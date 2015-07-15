@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<script src="Scripts/angular.js"></script>
+</head>
+<body ng-app="mainModule" ng-controller="mainController" ng-keydown="onKeyDown($event)" >
+	<div>
+		<label>
+			Type something:
+			<input type="text"
+				   ng-keydown="onKeyDown($event)"
+				   ng-keyup="onKeyUp($event)"
+				   ng-keypress="onKeyPress($event)" />
+		</label><br />
+		<strong>KEY DOWN RESULT:</strong> {{onKeyDownResult}}<br />
+		<strong>KEY UP RESULT:</strong> {{onKeyUpResult}}<br />
+		<strong>KEY PRESS RESULT:</strong> {{onKeyPressResult}}
+	</div>
+</body>
+</html>
+<script>
+	angular.module("mainModule", [])
+  .controller("mainController", function ($scope) {
+  	// Initialization
+  	$scope.onKeyDownResult = "";
+  	$scope.onKeyUpResult = "";
+  	$scope.onKeyPressResult = "";
+
+  	// Utility functions
+  	var getKeyboardEventResult = function (keyEvent, keyEventDesc) {
+  		return keyEventDesc + " (keyCode: " + (window.event ? keyEvent.keyCode : keyEvent.which) + ")";
+  	};
+
+  	var c = 0;
+
+  	// Event handlers
+  	$scope.onKeyDown = function ($event) {
+  		c++;
+  		console.log("onKeyDown:" + c);
+  		$scope.onKeyDownResult = getKeyboardEventResult($event, "Key down");
+  	};
+
+  	$scope.onKeyUp = function ($event) {
+  		c++;
+  		console.log("onKeyUp:" + c);
+  		$scope.onKeyUpResult = getKeyboardEventResult($event, "Key up");
+  	};
+
+  	$scope.onKeyPress = function ($event) {
+  		c++;
+  		console.log("onKeyPress:" + c);
+  		$scope.onKeyPressResult = getKeyboardEventResult($event, "Key press");
+  	};
+  });
+</script>
+<!--
+http://www.angularjshub.com/examples/eventhandlers/keyboardevents/
+
+	通常のキーは、
+
+	onKeyDown
+	↓
+	onKeyDown
+	↓
+	onKeyPress
+	↓
+	onKeyUp
+
+	と発生する
+
+	ただし、CtrlとAltは、
+
+	onKeyDown
+	↓
+	onKeyDown
+	↓
+	onKeyUp
+
+-->

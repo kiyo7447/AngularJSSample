@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<script src="Scripts/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+</head>
+<body ng-app="example" ng-controller="storageCtrl">
+	<h2>Storage</h2>
+	<section class="c-section" ng-controller="storageCtrl">
+		<input type="text" ng-model="$storage.counter">
+		<button ng-click="counter()">+1</button>
+		<button ng-click="delete()">Del</button>
+	</section>
+	<br />
+	name:{{$storage.name}}<br />
+	<input type="text" ng-model="$storage.name2" />
+</body>
+</html>
+
+<script>
+	var example = angular.module('example', ['ngStorage']);
+
+	example
+	  .controller('storageCtrl',
+				  ['$localStorage', '$scope',
+					function ($localStorage, $scope) {
+
+						$scope.$storage = $localStorage.$default({
+							counter: 42, // デフォルト値の指定
+							name:"abe",
+							name2: "kiyotaka"
+						});
+
+						$scope.counter = function () {
+							$localStorage.counter = $scope.$storage.counter + 1; // +1してlocalStorageに保存
+
+							console.log('count up');
+						}
+
+						$scope.delete = function () {
+							$localStorage.$reset({
+								counter: 42
+							});
+
+							console.log('delete');
+						}
+					}
+				  ]
+				 );
+</script>
+
+<!--
+	ソースの入手先
+	http://whiskers.nukos.kitchen/2015/04/21/angularjs-storage.html
+
+	ライブラリの入手先
+	https://github.com/gsklee/ngStorage
+
+-->
