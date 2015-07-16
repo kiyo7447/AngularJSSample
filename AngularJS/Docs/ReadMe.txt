@@ -52,4 +52,20 @@ validationが完成しなかった。。。
 
 
 
-	Routerについては、ngRouterとuiRouterがある。ｆ
+Routerについては、ngRouterとuiRouterがある。AngularJS1.4では、ngRouteを使うか、ui-Routerを使うかが悩み
+
+
+画面遷移時の値の受け渡しが明確化されていない。
+		http://dev.classmethod.jp/client-side/javascript/ngscreentransitionsample/
+		
+画面遷移時に処理を入れて、内容によっては、遷移をキャンセルしたい。
+
+
+画面表示にログインして無ければログイン画面を表示したい。
+	ui-routerで作成はしてみたが実際のログイン処理は、非同期なのでpromiseを使用した処理に変更しなければならない。
+
+
+
+
+
+

@@ -60,6 +60,8 @@
     <Content Include="routerAMail\detail.html" />
     <Content Include="routerAMail\list.html" />
     <Content Include="routerInput\input.html" />
+    <Content Include="routerLogin\home.html" />
+    <Content Include="routerLogin\login.html" />
     <Content Include="routerMenu\menu.html" />
     <Content Include="routerServerAccess\list.html" />
     <Content Include="routerUIRouterEx\detail.html" />
@@ -866,6 +868,9 @@
     <TypeScriptCompile Include="router.ts" />
     <TypeScriptCompile Include="routerAMail\controllers.ts" />
     <TypeScriptCompile Include="routerInput\input.ts" />
+    <TypeScriptCompile Include="routerLogin\homeController.ts" />
+    <TypeScriptCompile Include="routerLogin\loginController.ts" />
+    <TypeScriptCompile Include="routerLogin\logoutController.ts" />
     <TypeScriptCompile Include="routerMenu\controllers.ts" />
     <TypeScriptCompile Include="routerServerAccess\controllers.ts" />
     <TypeScriptCompile Include="routerUIRouterEx\controllers.ts" />

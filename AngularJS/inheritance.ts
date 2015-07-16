@@ -26,16 +26,16 @@ module inheritance {
 
 	export interface IInheritanceController extends ng.IScope {
 		date: number;
-
 		getDate(): number;
+
 	}
 
 	export class InheritanceController {
 		constructor(private $scope: IInheritanceController) {
 			$scope.date = 123;
-
 			$scope.getDate= ()=> {
 				return new Date().toIntDate();
+
 			}
 		}
 	}

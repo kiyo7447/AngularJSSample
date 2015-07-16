@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -15,7 +16,7 @@ namespace AngularJSAndTypeScriptServer.Controllers
 		// GET: Products
         public ActionResult Index()
         {
-
+			Debug.WriteLine("getProducts();");
 			return Json(_master.Products, JsonRequestBehavior.AllowGet); ;
         }
     }

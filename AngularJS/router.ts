@@ -7,16 +7,16 @@ module UNITE {
 
 	//↓update ngRoute ⇒ UI-Router
 	
-	var aMailService: ng.IModule = angular.module("AMail", ["ngLocale", "ui.router"]);
-//	var aMailService: ng.IModule = angular.module("AMail", ["ui.router"]);
+	var routerTestService: ng.IModule = angular.module("AMail", ["ngLocale", "ui.router"]);
+	//	var aMailService: ng.IModule = angular.module("AMail", ["ui.router"]);
 
 
 	//URLとテンプレートそしてコントローラの対応関係を指定します。
 	//var emailRouteConfig = ["$routeProvider",
 	//    function emailRouteConfig($routeProvider) {
 
-	function emailRouteConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider:angular.ui.IUrlRouterProvider, $locationProvider: ng.ILocationProvider) {
-//	function emailRouteConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) {
+	function emailRouteConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider, $locationProvider: ng.ILocationProvider) {
+		//	function emailRouteConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) {
 		//$locationProvider.html5Mode(true);
 		//これが動作している。文字を変えるとデフォルトのstateが変わるため。
 		$urlRouterProvider.otherwise('/Menu');
@@ -24,24 +24,26 @@ module UNITE {
 		//
 		$stateProvider.
 			state("/Menu", {
-			url:"^/Menu",
+			url: "^/Menu",
 			templateUrl: "routerMenu/menu.html",
 			//controller: AMail.ListController
+			//↓この定義があるとログインしていないと表示できない。
+			//isLoginRequired:ture,
 		}).
 			state("/AMail", {
-			url:"^/AMail",
+			url: "^/AMail",
 			templateUrl: "routerAMail/list.html",
 			controller: AMail.ListController
 		}).
 		//詳細ビューではパラメータ付きのURLを指定います。
 			state("/AMail/:id", {
-			url:"^/AMail/:id",
+			url: "^/AMail/:id",
 			templateUrl: "routerAMail/detail.html",
 			controller: AMail.DetailController
 		}).
 		//サーバアクセス
 			state("/ServerAccess", {
-			url:"^/ServerAccess",
+			url: "^/ServerAccess",
 			templateUrl: "routerServerAccess/list.html",
 			controller: ServerAccess.ListController
 		}).
@@ -81,27 +83,77 @@ module UNITE {
 			controller: BMail.DetailController
 		}).
 
-			//これは動作していない。外しても問題なさそうだ。どうも「$urlRouterProvider.otherwise('/Menu');」が動作している。
-			//http://stackoverflow.com/questions/16793724/otherwise-on-stateprovider
+		//
+			state("/home", {
+			url: "^/home",
+			templateUrl: "routerLogin/home.html",
+			controller: login.HomeController,
+			isLoginRequired: true
+		}).
+		//
+			state("/login", {
+			url: "^/login",
+			templateUrl: "routerLogin/login.html",
+			controller: login.LoginController
+		}).
+		//
+			state("/logout", {
+			url: "^/logout",
+			controller: login.LogoutController
+		}).
+
+		//これは動作していない。外しても問題なさそうだ。どうも「$urlRouterProvider.otherwise('/Menu');」が動作している。
+		//http://stackoverflow.com/questions/16793724/otherwise-on-stateprovider
 			state("otherwise", {
 			redirectTo: "/Menu"
-		
+
 		});
 	};
 	//}];
 
 	//A-Mailサービスルートを解釈できるようにするための設定
-	aMailService.config(emailRouteConfig);
-
-	//aMailService.run(["$rootScope", "$state", "UserModel", ($rootScope:ng.IRootScopeService, $state, UserModel) => {
-
-	//	$rootScope.$on("$stateChangeStart",(e: ng.IAngularEvent, toParams, fromState, fromParams) => {
+	routerTestService.config(emailRouteConfig);
 
 
-	//		$state.go("login");
-	//	})
-	//}]);
 
+	//骨格の参考
+	//http://qiita.com/ooharabucyou/items/65f52646d721da5b2032
+	//↓
+	//認証を非同期にしなければならない。
+	//http://liginc.co.jp/web/js/other-js/160349
+	class UserService {
+		private _isLogin: boolean = false;
+
+		isLoggedIn(): boolean {
+			return this._isLogin;
+		}
+
+		login(): boolean {
+			this._isLogin = true;
+			return this._isLogin;
+		}
+
+		logout(): void {
+			this._isLogin = false;
+		}
+	}
+
+	routerTestService.service("userService", UserService);
+
+	routerTestService.run(["$rootScope", "$state", "userService", ($rootScope: ng.IRootScopeService, $state, userService: UserService) => {
+
+		$rootScope.$on("$stateChangeStart",(e: ng.IAngularEvent, toState, toParams, fromState, fromParams) => {
+			if (toState.isLoginRequired) {
+				if (!userService.isLoggedIn()) {
+					$state.go("/login");
+
+					//この一行がないとログイン画面へ遷移しません。
+					e.preventDefault();
+				}
+
+			}
+		})
+	}]);
 	/*
 	  
 	//これは動作した これをヒントに他を動作させた
