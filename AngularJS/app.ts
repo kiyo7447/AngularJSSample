@@ -30,22 +30,5 @@ window.onload = () => {
 
 
 
-//基底クラスの拡張を無理やり実施
-class DateCommon {
-	toIntDate(): number {
-		var t:any = this;
-		return parseInt(t.getFullYear() + ("0" + (t.getMonth() + 1)).slice(-2) + ("0" + t.getDate()).slice(-2), 10);
-		//return 123;
-	}
-}
-
-_.extend(Date.prototype, DateCommon.prototype);
-
-var d: any = new Date();
-
-console.log(d.toIntDate());
-
-
-
 
 
