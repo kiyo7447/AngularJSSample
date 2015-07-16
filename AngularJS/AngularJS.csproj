@@ -35,6 +35,7 @@
     <Content Include="Docs\ReadMe.txt" />
     <Content Include="index.html" />
     <Content Include="basic03_Controller.js" />
+    <Content Include="promise.html" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="storage.png" />
@@ -816,6 +817,7 @@
     <TypeScriptCompile Include="modle02_RegisteringValueForTypeScript.ts" />
     <TypeScriptCompile Include="basic03_ControllerForTypeScript.ts" />
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="promise.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />

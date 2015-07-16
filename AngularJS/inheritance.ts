@@ -24,14 +24,14 @@ console.log(d.toIntDate());
 
 module inheritance {
 
-	export interface Ibasic03_Controller extends ng.IScope {
+	export interface IInhritanceController extends ng.IScope {
 		date: number;
 
 		getDate(): number;
 	}
 
-	export class inheritanceController {
-		constructor(private $scope: Ibasic03_Controller) {
+	export class InheritanceController {
+		constructor(private $scope: IInhritanceController) {
 			$scope.date = 123;
 
 			$scope.getDate= ()=> {
@@ -52,6 +52,6 @@ angular.module("app", []).controller("simpleController", function ($scope) {
 	};
 
 	$scope.customers = [{ name: "abe", city: "Yoshida" }, { name: "kiyo", city: "Koshin" }];
-}).controller("inheritanceController", inheritance.inheritanceController);
+}).controller("inheritanceController", inheritance.InheritanceController);
 
 

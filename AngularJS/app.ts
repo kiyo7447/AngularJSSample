@@ -1,4 +1,4 @@
-﻿/// <reference path="scripts/typings/underscore/underscore.d.ts" />
+﻿
 class Greeter {
     element: HTMLElement;
     span: HTMLElement;
