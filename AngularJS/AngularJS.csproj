@@ -22,6 +22,10 @@
     <Content Include="angular1.2.2.js" />
     <Content Include="cookies.html" />
     <Content Include="customFilter.html" />
+    <Content Include="http.html" />
+    <None Include="http.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="inheritance.html" />
     <Content Include="keyboardEvent.html" />
     <Content Include="limitToSampleバリアルブル.html" />
@@ -813,6 +817,7 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="http.ts" />
     <TypeScriptCompile Include="inheritance.ts" />
     <TypeScriptCompile Include="modle02_RegisteringValueForTypeScript.ts" />
     <TypeScriptCompile Include="basic03_ControllerForTypeScript.ts" />

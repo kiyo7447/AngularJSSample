@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<script src="Scripts/angular.js"></script>
+	<script src="http.js"></script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="httpController">
+		<button ng-click="get()">Requset HTTP JSON</button><br />
+		<strong>status:</strong>{{status}}<br />
+		<strong>data:</strong>{{data}}
+	</div>
+</body>
+</html>
