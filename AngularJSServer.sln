@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularJSServer", "AngularJSServer\AngularJSServer.csproj", "{68833384-A6C0-4A04-8A68-6057E2760C06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularJSServer.Tests", "AngularJSServer.Tests\AngularJSServer.Tests.csproj", "{CAD33F4A-FF9D-4DF0-9050-414ED0CF0DBB}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68833384-A6C0-4A04-8A68-6057E2760C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68833384-A6C0-4A04-8A68-6057E2760C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68833384-A6C0-4A04-8A68-6057E2760C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68833384-A6C0-4A04-8A68-6057E2760C06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD33F4A-FF9D-4DF0-9050-414ED0CF0DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD33F4A-FF9D-4DF0-9050-414ED0CF0DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD33F4A-FF9D-4DF0-9050-414ED0CF0DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD33F4A-FF9D-4DF0-9050-414ED0CF0DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
