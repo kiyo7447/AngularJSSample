@@ -20,6 +20,11 @@
   <ItemGroup>
     <Content Include="angular1.3.9.js" />
     <Content Include="angular1.2.2.js" />
+    <Content Include="chart\dashBoard.html" />
+    <Content Include="chart\radialProgress.html" />
+    <Content Include="chart\radialProgress\d3.min.js" />
+    <Content Include="chart\radialProgress\radialProgress.js" />
+    <Content Include="chart\radialProgress\style.css" />
     <Content Include="routerBootstrapMail\detail.html" />
     <Content Include="routerBootstrapMail\list.html" />
     <Content Include="routerBootstrap\bootstrap.html" />
