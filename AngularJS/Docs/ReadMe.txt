@@ -51,3 +51,5 @@ validationが完成しなかった。。。
 	$httpを使ったがjsonがエラー404で取得できなかった。物理ファイルで匿名ユーザの参照権限を付与する必要がある。
 
 
+
+	Routerについては、ngRouterとuiRouterがある。ｆ
