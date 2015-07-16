@@ -1,4 +1,3 @@
-/// <reference path="scripts/typings/underscore/underscore.d.ts" />
 var Greeter = (function () {
     function Greeter(element) {
         this.element = element;
@@ -21,18 +20,4 @@ window.onload = function () {
     var greeter = new Greeter(el);
     greeter.start();
 };
-//基底クラスの拡張を無理やり実施
-var DateCommon = (function () {
-    function DateCommon() {
-    }
-    DateCommon.prototype.toIntDate = function () {
-        var t = this;
-        return parseInt(t.getFullYear() + ("0" + (t.getMonth() + 1)).slice(-2) + ("0" + t.getDate()).slice(-2), 10);
-        //return 123;
-    };
-    return DateCommon;
-})();
-_.extend(Date.prototype, DateCommon.prototype);
-var d = new Date();
-console.log(d.toIntDate());
 //# sourceMappingURL=app.js.map

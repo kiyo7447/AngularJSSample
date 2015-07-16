@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<script src="Scripts/angular.js"></script>
+	<script src="promise.js"></script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="promiseController">
+		<strong>date</strong>{{getDate()}}<br />
+
+
+		<strong>resolve:</strong>{{resolve}}<br />
+		<strong>reject:</strong>{{reject}}<br />
+		<strong>notify:</strong>{{notify}}<br />
+
+		<input type="text" ng-model="name2" />
+
+		<button ng-click="run()">run</button>
+	</div>
+</body>
+</html>
