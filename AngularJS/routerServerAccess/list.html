@@ -1,0 +1,17 @@
+﻿<table>
+	<tr>
+		<td><strong>ID</strong></td>
+		<td><strong>タイトル</strong></td>
+		<td><strong>詳細</strong></td>
+		<td><strong>価格</strong></td>
+	</tr>
+	<tr ng-repeat="product in products">
+		<td>{{product.Id}}</td>
+		<td>{{product.Titile}}</td>
+		<td>{{product.Description}}</td>
+		<td>{{product.Price}}</td>
+	</tr>
+</table>
+<div ng-show="errorMessage">エラーが発生しました。({{errorMessage}})</div>
+<div ng-show="statusMessage">処理中：({{statusMessage}})</div>
+<a href="#/">メニューへ戻る</a>

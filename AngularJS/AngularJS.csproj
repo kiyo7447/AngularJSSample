@@ -40,6 +40,23 @@
     <Content Include="index.html" />
     <Content Include="basic03_Controller.js" />
     <Content Include="promise.html" />
+    <Content Include="router.html" />
+    <Content Include="routerAMail\controllers.js" />
+    <Content Include="routerAMail\detail.html" />
+    <Content Include="routerAMail\list.html" />
+    <Content Include="routerInput\input.html" />
+    <Content Include="routerInput\input.js" />
+    <Content Include="routerMenu\controllers.js" />
+    <Content Include="routerMenu\menu.html" />
+    <Content Include="routerServerAccess\controllers.js" />
+    <Content Include="routerServerAccess\list.html" />
+    <Content Include="routerUIRouterEx\controllers.js" />
+    <Content Include="routerUIRouterEx\detail.html" />
+    <Content Include="routerUIRouterEx\list.html" />
+    <Content Include="routerUIRouterEx\pictures.html" />
+    <Content Include="routerUIRouterEx\ReadMe.txt" />
+    <Content Include="Scripts\angular-ui-router.js" />
+    <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="storage.png" />
@@ -823,6 +840,13 @@
     <TypeScriptCompile Include="basic03_ControllerForTypeScript.ts" />
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="promise.ts" />
+    <TypeScriptCompile Include="router.ts" />
+    <TypeScriptCompile Include="routerAMail\controllers.ts" />
+    <TypeScriptCompile Include="routerInput\input.ts" />
+    <TypeScriptCompile Include="routerMenu\controllers.ts" />
+    <TypeScriptCompile Include="routerServerAccess\controllers.ts" />
+    <TypeScriptCompile Include="routerUIRouterEx\controllers.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angular-ui-router\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />
@@ -851,6 +875,11 @@
     <Content Include="packages.config" />
     <Content Include="Docs\AngularJS Hub -.url" />
     <Content Include="Scripts\underscore.min.map" />
+    <Content Include="routerAMail\controllers.js.map" />
+    <Content Include="routerInput\input.js.map" />
+    <Content Include="routerMenu\controllers.js.map" />
+    <Content Include="routerServerAccess\controllers.js.map" />
+    <Content Include="routerUIRouterEx\controllers.js.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

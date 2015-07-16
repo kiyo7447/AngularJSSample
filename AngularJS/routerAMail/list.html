@@ -1,0 +1,15 @@
+﻿<table>
+    <tr>
+        <td><strong>送信者</strong></td>
+        <td><strong>件名</strong></td>
+        <td><strong>日時</strong></td>
+    </tr>
+    <tr ng-repeat="message in messages">
+        <td>{{message.sender}}</td>
+        <td><a href="#/AMail/{{message.id}}">{{message.subject}}</a></td>
+        <td>{{message.date}}</td>
+    </tr>
+</table>
+<div>
+	<a href="#/">Menuへ戻る</a>
+</div>

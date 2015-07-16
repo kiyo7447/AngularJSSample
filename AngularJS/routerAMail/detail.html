@@ -1,0 +1,10 @@
+﻿
+<div><string>件名：</string>{{message.subject}}</div>
+<div><string>送信者：</string>{{message.sender}}</div>
+<div><string>日時：</string>{{message.date}}</div>
+<div>
+    <string>宛先：</string>
+    <span ng-repeat="recipient in message.recipients">{{recipient}}</span>{{test}}
+</div>
+<div>{{message.message}}</div>
+<a href="#/AMail">メッセージリストに戻る</a>
