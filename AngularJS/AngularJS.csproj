@@ -20,12 +20,28 @@
   <ItemGroup>
     <Content Include="angular1.3.9.js" />
     <Content Include="angular1.2.2.js" />
+    <Content Include="routerBootstrapMail\detail.html" />
+    <Content Include="routerBootstrapMail\list.html" />
+    <Content Include="routerBootstrap\bootstrap.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="cookies.html" />
     <Content Include="customFilter.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="http.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
     <None Include="http.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="Icon.png" />
     <Content Include="inheritance.html" />
     <Content Include="keyboardEvent.html" />
     <Content Include="limitToSampleバリアルブル.html" />
@@ -41,22 +57,27 @@
     <Content Include="basic03_Controller.js" />
     <Content Include="promise.html" />
     <Content Include="router.html" />
-    <Content Include="routerAMail\controllers.js" />
     <Content Include="routerAMail\detail.html" />
     <Content Include="routerAMail\list.html" />
     <Content Include="routerInput\input.html" />
-    <Content Include="routerInput\input.js" />
-    <Content Include="routerMenu\controllers.js" />
     <Content Include="routerMenu\menu.html" />
-    <Content Include="routerServerAccess\controllers.js" />
     <Content Include="routerServerAccess\list.html" />
-    <Content Include="routerUIRouterEx\controllers.js" />
     <Content Include="routerUIRouterEx\detail.html" />
     <Content Include="routerUIRouterEx\list.html" />
     <Content Include="routerUIRouterEx\pictures.html" />
     <Content Include="routerUIRouterEx\ReadMe.txt" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
     <Content Include="storage.png" />
@@ -834,6 +855,8 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="routerBootstrapMail\controllers.ts" />
+    <TypeScriptCompile Include="routerBootstrap\controllers.ts" />
     <TypeScriptCompile Include="http.ts" />
     <TypeScriptCompile Include="inheritance.ts" />
     <TypeScriptCompile Include="modle02_RegisteringValueForTypeScript.ts" />
@@ -875,11 +898,7 @@
     <Content Include="packages.config" />
     <Content Include="Docs\AngularJS Hub -.url" />
     <Content Include="Scripts\underscore.min.map" />
-    <Content Include="routerAMail\controllers.js.map" />
-    <Content Include="routerInput\input.js.map" />
-    <Content Include="routerMenu\controllers.js.map" />
-    <Content Include="routerServerAccess\controllers.js.map" />
-    <Content Include="routerUIRouterEx\controllers.js.map" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

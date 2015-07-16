@@ -1,0 +1,40 @@
+﻿<div>
+	<div>
+		<button type="button" class="btn btn-default">Default</button>
+		<button type="button" class="btn btn-primary">Primary</button>
+		<button type="button" class="btn btn-success">Success</button>
+		<button type="button" class="btn btn-info">Info</button>
+		<button type="button" class="btn btn-warning">Warning</button>
+		<button type="button" class="btn btn-danger">Danger</button>
+		<button type="button" class="btn btn-link">Link</button>
+
+	</div>
+	count:{{count}}
+	<div>
+
+		<p>
+			<!--
+				これは非常にダサい、本来はディレクティブを作成するほうがスマート
+				http://stackoverflow.com/questions/14201753/angular-js-how-when-to-use-ng-click-to-call-a-route
+				-->
+			<button type="button" class="btn btn-primary btn-lg" ng-click="go('#/')">Large button</button>
+			<button type="button" class="btn btn-default btn-lg" ng-click="alert('ok')">Large button</button>
+		</p>
+		<p>
+			<button type="button" class="btn btn-primary" ng-click="count=count+1" ng-init="count=0">Default button</button>
+			<button type="button" class="btn btn-default">Default button</button>
+		</p>
+		<p>
+			<button type="button" class="btn btn-primary btn-sm" ng-click="$close()">Small button</button>
+			<button type="button" class="btn btn-default btn-sm">Small button</button>
+		</p>
+		<p>
+			<button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+			<button type="button" class="btn btn-default btn-xs">Extra small button</button>
+		</p>
+
+	</div>
+	<div>
+		<a href="#/">Menuへ戻る</a>
+	</div>
+</div>

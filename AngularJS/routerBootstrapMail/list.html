@@ -1,0 +1,21 @@
+﻿<div class="container">
+	<table class="table">
+		<thread>
+			<tr>
+				<td><strong>送信者</strong></td>
+				<td><strong>件名</strong></td>
+				<td><strong>日時</strong></td>
+			</tr>
+		</thread>
+		<tbody>
+			<tr ng-repeat="message in messages">
+				<td>{{message.sender}}</td>
+				<td><a href="#/BMail/{{message.id}}">{{message.subject}}</a></td>
+				<td>{{message.date}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div>
+	<a href="#/">Menuへ戻る</a>
+</div>

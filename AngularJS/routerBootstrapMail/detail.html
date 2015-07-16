@@ -1,0 +1,32 @@
+﻿
+<div class="input-group input-group-lg">
+	<span class="input-group-addon" id="sizing-addon1">件名：</span>
+	<input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" value="{{message.subject}}">
+</div>
+<div class="input-group input-group-lg">
+	<span class="input-group-addon" id="sizing-addon1">送信者：</span>
+	<input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" value="{{message.sender}}">
+</div>
+<div class="input-group input-group-lg">
+	<span class="input-group-addon" id="sizing-addon1">日時：</span>
+	<input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" value="{{message.date}}">
+</div>
+
+
+
+
+<div><string>件名：</string>{{message.subject}}</div>
+<div><string>送信者：</string>{{message.sender}}</div>
+<div><string>日時：</string>{{message.date}}</div>
+<div>
+    <string>宛先：</string>
+    <span ng-repeat="recipient in message.recipients">{{recipient}}</span>
+</div>
+<div>{{message.message}}</div>
+<a href="#/BMail">メッセージリストに戻る</a>
+{{test}}
+
+<!--アイコンテスト-->
+<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-xbt" aria-hidden="true"></span>
+

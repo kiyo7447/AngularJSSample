@@ -7,16 +7,16 @@ module UNITE {
 
 	//↓update ngRoute ⇒ UI-Router
 	
-	var aMailService: ng.IModule = angular.module("AMail", ["ui.router"]);
-//	var aMailService: ng.IModule = angular.module("AMail", ["ngLocale", "ui.router"]);
+	var aMailService: ng.IModule = angular.module("AMail", ["ngLocale", "ui.router"]);
+//	var aMailService: ng.IModule = angular.module("AMail", ["ui.router"]);
 
 
 	//URLとテンプレートそしてコントローラの対応関係を指定します。
 	//var emailRouteConfig = ["$routeProvider",
 	//    function emailRouteConfig($routeProvider) {
 
-//	function emailRouteConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider:angular.ui.IUrlRouterProvider, $locationProvider: ng.ILocationProvider) {
-	function emailRouteConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) {
+	function emailRouteConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider:angular.ui.IUrlRouterProvider, $locationProvider: ng.ILocationProvider) {
+//	function emailRouteConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) {
 		//$locationProvider.html5Mode(true);
 		//これが動作している。文字を変えるとデフォルトのstateが変わるため。
 		$urlRouterProvider.otherwise('/Menu');
@@ -62,6 +62,23 @@ module UNITE {
 			url: "^/Input",
 			templateUrl: "routerInput/input.html",
 			controller: Input.InputController
+		}).
+		//Bootstrapサンプル
+			state("Bootstrapのサンプル", {
+			url: "^/Bootstrap",
+			templateUrl: "routerBootstrap/bootstrap.html",
+			controller: Bootstrap.MainCtrl
+		}).
+			state("BMail/list", {
+			url: "^/BMail",
+			templateUrl: "routerBootstrapMail/list.html",
+			controller: BMail.ListController
+		}).
+		//詳細ビューではパラメータ付きのURLを指定います。
+			state("BMail/detail", {
+			url: "^/BMail/:id",
+			templateUrl: "routerBootstrapMail/detail.html",
+			controller: BMail.DetailController
 		}).
 
 			//これは動作していない。外しても問題なさそうだ。どうも「$urlRouterProvider.otherwise('/Menu');」が動作している。
