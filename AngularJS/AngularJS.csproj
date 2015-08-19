@@ -25,6 +25,7 @@
     <Content Include="chart\radialProgress\d3.min.js" />
     <Content Include="chart\radialProgress\radialProgress.js" />
     <Content Include="chart\radialProgress\style.css" />
+    <Content Include="generic.html" />
     <Content Include="routerBootstrapMail\detail.html" />
     <Content Include="routerBootstrapMail\list.html" />
     <Content Include="routerBootstrap\bootstrap.html" />
@@ -862,6 +863,8 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="genericInheritance.ts" />
+    <TypeScriptCompile Include="genericSimple.ts" />
     <TypeScriptCompile Include="routerBootstrapMail\controllers.ts" />
     <TypeScriptCompile Include="routerBootstrap\controllers.ts" />
     <TypeScriptCompile Include="http.ts" />
